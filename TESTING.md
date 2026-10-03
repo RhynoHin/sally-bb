@@ -34,10 +34,13 @@ Separately, an automated controller used **only direction, jump and Heart Rattle
 
 Screenshots were opened and inspected for title, gameplay, balloon platform, portrait overlay, small iPhone menu, WebKit mobile/rotation layout, story ending, birthday wish and birthday ending. This review caught and fixed lingering old scenes after replay, stale canvas fitting after rotation and an ending/last-collectible ordering issue.
 
-## Still requiring a physical device or publication
+## GitHub Pages publication
+
+On 3 October 2026, the user approved public visibility for `RhynoHin/sally-bb`. GitHub Actions run [37132873207](https://github.com/RhynoHin/sally-bb/actions/runs/37132873207) deployed runtime commit `440f4f6c7445c551669a02ae0201bbd1e969e6ae` successfully. The Pages settings show the site live at https://rhynohin.github.io/sally-bb/ . The in-app browser loaded the menu and entered Candy Garden with three hearts and the MAGIC control. These are publication smoke checks, not a new full gameplay regression.
+
+## Still requiring a physical device
 
 - Real iPhone Safari and installed Home Screen launch, notch/Dynamic Island safe areas, speaker/Bluetooth routing, interruptions, storage eviction, battery use and sustained frame rate.
 - A human playthrough for feel, difficulty and Sally's reaction to the birthday surprise.
-- A live GitHub Actions deployment and its HTTPS URL. The game is stored in the private `RhynoHin/sally-bb` repository, but the current account plan does not enable Pages for private repositories. The supplied workflow is prepared for manual use after Pages is enabled. The public runtime is hosted separately through Sites at https://sally-bb-913.rhynohin.chatgpt.site .
 
 WebKit emulation is useful coverage; it does not establish that every iPhone model or installed-app behavior has been tested. HTTP home-network preview does not provide the HTTPS requirements for iPhone offline installation.
