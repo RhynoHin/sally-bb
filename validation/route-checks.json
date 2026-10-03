@@ -1,0 +1,39 @@
+{
+  "method": "Only normal direction, attack and jump inputs. No teleports, enemy removal or health overrides.",
+  "results": [
+    {
+      "level": 0,
+      "mode": "clear",
+      "health": 3,
+      "x": 2900
+    },
+    {
+      "level": 1,
+      "mode": "clear",
+      "health": 3,
+      "x": 3103
+    },
+    {
+      "level": 2,
+      "mode": "clear",
+      "health": 3,
+      "x": 3153
+    },
+    {
+      "level": 3,
+      "mode": "clear",
+      "health": 3,
+      "x": 3253
+    },
+    {
+      "level": 4,
+      "mode": "play",
+      "health": 3,
+      "x": 90
+    },
+    {
+      "birthday": true,
+      "mode": "ending"
+    }
+  ]
+}

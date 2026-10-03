@@ -1,0 +1,22 @@
+{
+  "checks": [
+    "Coyote-time jump succeeds after leaving a ledge",
+    "Buffered jump fires immediately after landing",
+    "Down + jump drops through one-way platforms",
+    "Crossing a checkpoint updates respawn",
+    "Continue story restores the saved checkpoint",
+    "Continue does not recreate previously collected items",
+    "Falling in a pit loses one heart and returns to checkpoint",
+    "Floating balloon expires and pops after its timer",
+    "Game loads at /sally-bb/ with all relative assets",
+    "Service worker scope stays within the repository path",
+    "Subdirectory deployment also reloads offline",
+    "Small iPhone menu buttons fit within the screen",
+    "Extra Chromium tests have no page or console errors",
+    "WebKit executes actual movement physics",
+    "WebKit executes jumping",
+    "WebKit portrait overlay appears",
+    "WebKit rotation restores full canvas width"
+  ],
+  "errors": []
+}

@@ -1,0 +1,17 @@
+import {app} from '../state.js';
+import {audio} from '../audio.js';
+import {save,persist,WORLDS} from '../config.js';
+import {controls} from './TouchControls.js';
+let toastTimer;
+export function toast(message){const el=document.querySelector('#toast');el.hidden=false;el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200);}
+export function hud(scene){document.querySelector('#hearts').textContent='♥'.repeat(scene.health)+'♡'.repeat(3-scene.health);document.querySelector('#score').textContent=String(app.run.score).padStart(6,'0');document.querySelector('#level').textContent=(scene.isBoss?'THE GRUMPY NANNY':WORLDS[scene.level].short);document.querySelector('#items').textContent=scene.level===5?`GIFTS ${scene.birthdayCollected.size}/${scene.birthdayTotal}`:`${app.run.letters.map(i=>'SALLY'[i]).join('')||'—'} ★ ${scene.stars}`;}
+export function showPanel(html,title=false){clearTimeout(toastTimer);document.querySelector('#toast').classList.remove('show');document.querySelector('#toast').hidden=true;const p=document.querySelector('#panel');p.className=title?'title':'';p.innerHTML=html;p.hidden=false;controls.reset();}
+export function hidePanel(){document.querySelector('#panel').hidden=true;}
+export function gameplayUI(on){document.querySelector('#hud').hidden=!on;document.querySelector('#controls').hidden=!on;}
+export function bind(id,fn){document.querySelector('#'+id)?.addEventListener('click',()=>{audio.unlock();audio.sfx('menu');fn();});}
+export function start(level=0,continued=false){audio.unlock();controls.reset();app.paused=false;audio.suspend(false);app.mode='play';if(!continued){app.run={level,score:0,letters:[],health:3};if(level===0){save.story={...app.run};save.letters=[];persist();}}else app.run={...save.story,letters:[...save.story.letters]};app.current.scene.start(level===5?'Birthday':'Story',{level,run:app.run});}
+export function mainMenu(){app.paused=false;audio.suspend(false);app.current.scene.start('Menu');}
+export function pause(){if(app.mode!=='play'||app.orientationPaused)return;app.paused=true;app.current.physics.world.pause();audio.suspend(true);app.mode='pause';showPanel(`<div class="menu-card"><div class="eyebrow">a little breather</div><h1>Rest your tiny feet ♥</h1><p>Your adventure will be right here.</p><div class="row"><button id="resume" class="primary">RESUME</button><button id="restart">RESTART LEVEL</button><button id="sound">SOUND ${save.sound?'ON':'OFF'}</button><button id="menu">MAIN MENU</button></div><div class="row"><button id="motion">SCREEN SHAKE ${save.reducedMotion?'OFF':'ON'}</button></div></div>`);bind('resume',resume);bind('restart',()=>app.current.restart());bind('sound',()=>{audio.toggle();document.querySelector('#sound').textContent=`SOUND ${save.sound?'ON':'OFF'}`;});bind('menu',mainMenu);bind('motion',()=>{save.reducedMotion=!save.reducedMotion;persist();document.querySelector('#motion').textContent=`SCREEN SHAKE ${save.reducedMotion?'OFF':'ON'}`;});}
+export function resume(){app.paused=false;app.mode='play';app.current.physics.world.resume();audio.suspend(false);hidePanel();controls.reset();}
+document.querySelector('#pause').onclick=pause;
+window.addEventListener('keydown',e=>{if(e.code==='Escape'){if(app.mode==='pause')resume();else pause();}if(e.code==='KeyF'){if(document.fullscreenElement)document.exitFullscreen?.();else document.querySelector('#shell').requestFullscreen?.().catch(()=>{});}});

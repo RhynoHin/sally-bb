@@ -1,0 +1,14 @@
+{
+  "browser": "Google Chrome 154.0.8037.58",
+  "checks": [
+    "Google Chrome movement works",
+    "Releasing Jump early gives a measurably smaller hop",
+    "Heart pickup restores health",
+    "Milk pickup gives temporary speed bonus",
+    "Factory lift stays still until switched on",
+    "Heart switch causes lift to move",
+    "Conveyor carries Sally without directional input",
+    "Google Chrome has zero captured page or console errors"
+  ],
+  "errors": []
+}
