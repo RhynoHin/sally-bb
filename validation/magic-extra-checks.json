@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "How-to-play Back button fits the smallest iPhone",
+    "Reduced-motion preference changes transformation choreography",
+    "Reduced-motion magic completes normally",
+    "Transformation produces an actual nonzero audio waveform",
+    "Mute silences transformation sound",
+    "Extra magic checks have zero browser errors"
+  ],
+  "errors": [],
+  "audioPeak": 0.03781895101705326
+}

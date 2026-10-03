@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "Magic starts ready",
+    "C starts full-screen transformation",
+    "Transformation consumes full charge",
+    "Sally cannot take damage during transformation",
+    "World position freezes during transformation",
+    "Portrait freezes the transformation timeline",
+    "Transformation leads into the ultimate",
+    "Heart bloom defeats visible enemies and returns to gameplay",
+    "Magical outfit continues after the finisher",
+    "Ultimate awards score",
+    "Normal controls return after cinematic",
+    "Gameplay uses the transformed outfit",
+    "Insufficient charge cannot restart magic",
+    "Collectibles refill magic",
+    "Pause still freezes gameplay",
+    "Magical form expires",
+    "Original outfit returns after form expires",
+    "Death shows Sally crying with her milk bottle",
+    "Crying tears and bob animate",
+    "Death hides gameplay controls",
+    "Small iPhone retry stays accessible",
+    "Small iPhone menu stays accessible",
+    "Retry restores Sally and removes crying scene",
+    "Retry starts a fresh magic charge",
+    "Multi-touch MAGIC starts transformation",
+    "After touch magic, movement is not stuck",
+    "Ultimate damages boss by one heart",
+    "Final boss hit waits for the cinematic to finish",
+    "Ultimate final boss hit opens ending cleanly",
+    "Ending is free of cinematic UI state",
+    "Birthday magic preserves special treasure requirements",
+    "New magic works after offline reload",
+    "Chrome has zero browser errors"
+  ],
+  "errors": [],
+  "browsers": [
+    "Chrome 154.0.8037.58"
+  ],
+  "webkitLimitation": "WebKit runner did not begin navigation: local goto timed out at 15, 30 and 45 seconds. New Safari behavior is unverified in this update; prior build had WebKit coverage."
+}

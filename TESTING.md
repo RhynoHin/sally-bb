@@ -2,7 +2,15 @@
 
 Build date: **3 October 2026**. Local automated testing used Playwright with **Google Chrome 154.0.8037.58**, **Chromium** and **WebKit**, Phaser's actual scene/physics loop, `render_game_to_text()` and deterministic `advanceTime()` stepping.
 
-## Verified
+## Latest Starheart update
+
+**103 assertions passed** across Chrome 154 and Chromium, with zero captured game console/page errors: 33 transformation/death checks, 6 layout/audio/reduced-motion checks and 64 gameplay regressions. The unchanged skill action client also captured movement/jump, transformation and menu states. See `validation/magic-checks.json`, `magic-extra-checks.json` and `magic-regression-checks.json`.
+
+New coverage includes C and actual simultaneous touch activation, charge/refill, world and health freeze, portrait pause/resume, finisher damage and score, transformed outfit expiry, boss hit and final-hit ending, birthday treasure requirements, crying/tears/bottle animation, small-screen retry/menu/help, real nonzero transformation audio output, mute and offline reload of the new assets. Screenshots were visually inspected.
+
+WebKit in this update timed out before beginning local navigation at 15, 30 and 45 seconds. New Safari behavior is unverified; the earlier build had WebKit coverage. A physical iPhone remains untested.
+
+## Original-build verification
 
 **90 assertions passed with zero captured browser console/page errors.** See `validation/system-checks.json`, `validation/extra-checks.json` and `validation/chrome-checks.json` for individual assertions.
 
@@ -30,6 +38,6 @@ Screenshots were opened and inspected for title, gameplay, balloon platform, por
 
 - Real iPhone Safari and installed Home Screen launch, notch/Dynamic Island safe areas, speaker/Bluetooth routing, interruptions, storage eviction, battery use and sustained frame rate.
 - A human playthrough for feel, difficulty and Sally's reaction to the birthday surprise.
-- A live GitHub Actions deployment and its HTTPS URL. The game is stored in the private `RhynoHin/sally-bb` repository, but the current account plan does not enable Pages for private repositories. The supplied workflow is prepared for manual use after Pages is enabled.
+- A live GitHub Actions deployment and its HTTPS URL. The game is stored in the private `RhynoHin/sally-bb` repository, but the current account plan does not enable Pages for private repositories. The supplied workflow is prepared for manual use after Pages is enabled. The public runtime is hosted separately through Sites at https://sally-bb-913.rhynohin.chatgpt.site .
 
 WebKit emulation is useful coverage; it does not establish that every iPhone model or installed-app behavior has been tested. HTTP home-network preview does not provide the HTTPS requirements for iPhone offline installation.
